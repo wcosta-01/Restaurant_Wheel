@@ -1,0 +1,61 @@
+<!DOCTYPE <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <?PHP
+            echo shell_exec("python yelp.py 'location' 'Range'");
+        ?>
+        <div class= "nav-container">
+            <div class= "wrapper">
+                <nav>
+                    <div class= "logo">
+                        Restaurant Roulette
+                        <img class="small-logo" src="images/logo-small.svg">
+                    </div>
+
+                </nav>
+            </div>
+        </div>    
+
+        <div class="header-container">
+            <div class="wrapperhead">
+                <header>
+                <div class="left">
+                    <div class="settings-content">
+                        <h1>SETTINGS</h1>
+                        <!--IP goes where yelp.py is-->
+                        <form action="yelp.py">
+
+                            <input id="inputLocation" type="text" class="range-box" name="inputLocation" placeholder="Range"/>
+                            <input type="text" class="location-box" placeholder="Location" name="inputRange"/>
+                            <div><input type="submit" onclick="spinInputs();" class="spin-btn" value="SPIN!" ></div>
+                            
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="mid">
+                    <div class="wheel-content">
+                        <img src="images/wheel-big-icon.svg" alt =""/>
+                            <div class="wheel-big-icon.svg"></div>
+                        
+                    </div>
+                </div>
+                </header>    
+            </div>  
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
