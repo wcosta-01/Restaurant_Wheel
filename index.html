@@ -13,9 +13,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <?PHP
-            echo shell_exec("python yelp.py 'location' 'Range'");
-        ?>
+        
         <div class= "nav-container">
             <div class= "wrapper">
                 <nav>
@@ -33,24 +31,109 @@
                 <header>
                 <div class="left">
                     <div class="settings-content">
-                        <h1>SETTINGS</h1>
+                        
                         <!--IP goes where yelp.py is-->
-                        <form action="yelp.py">
-
-                            <input id="inputLocation" type="text" class="range-box" name="inputLocation" placeholder="Range"/>
-                            <input type="text" class="location-box" placeholder="Location" name="inputRange"/>
-                            <div><input type="submit" onclick="spinInputs();" class="spin-btn" value="SPIN!" ></div>
+                        <form method="post" action="index.php">
+                            <!--User Entery-->
+                            <h1>SETTINGS</h1>
+                            <h2>Radius has a 25 mile Limit</h2>
+                            <input id="inputL"type="text" class="location-box"  name="InputLo" placeholder="Location, City" />
+                            <input id="inputR" type="text" class="range-box" name="inputRa" placeholder="Mile Radius" />
+                            <!--Category Check Boxes-->
+                            <h1>CATEGORIES</h1>
+                            <div class="category-container">
+                                <div class="cate-inner">
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Sushi"name="Sushi">
+                                        <label for="Sushi">Sushi</label>
+                                    </div>
+                                            
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Italian" name="Italian">
+                                        <label for="Italian">Italian</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Chinese" name="Chinese">
+                                        <label for="Chinese">Chinese</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Thai" name="Thai">
+                                        <label for="Thai">Thai</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Indian" name="Indian">
+                                        <label for="Indian">Indian</label>
+                                    </div>
+                                    
+                                </div>
+                                <div class="cate-inner">
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Mexican" name="Mexican">
+                                        <label for="Mexican">Mexican</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Koren" name="Koren">
+                                        <label for="Koren">Koren</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Ethiopian" name="Ethiopian">
+                                        <label for="Ethiopian">Ethiopian</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Vietnamese" name="Vietnamese">
+                                        <label for="Vietnamese">Vietnamese</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Caribbean" name="Caribbean">
+                                        <label for="Caribbean">Caribbean</label>
+                                    </div>
+                                    
+                                </div>
+                                <div class="cate-inn">
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Bars" name="Bars">
+                                        <label for="Bars">Bars</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Sports Bars" name="Sports Bars">
+                                        <label for="Sports Bars">Sports Bars</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Beer, Wine, & Spirits" name="Beer, Wine, & Spirits">
+                                        <label for="Beer, Wine, & Spirits">Beer, Wine, & Spirits</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Gastropubs" name="Gastropubs">
+                                        <label for="Gastropubs">Gastropubs</label>
+                                    </div>
+                                    
+                                    <div class="cate-check">
+                                        <input type="checkbox" id="Whiskey Bars" name="Whiskey Bars">
+                                        <label for="Whiskey Bars">Whiskey Bars</label>
+                                    </div>
+                                </div>                                
+                            </div>
+                            
+                            <!--Button-->
+                            <div><input type="submit" name="spin_btn" class="spin-btn" value="SPIN!"></div>
                             
                         </form>
-
                     </div>
                 </div>
-
                 <div class="mid">
                     <div class="wheel-content">
                         <img src="images/wheel-big-icon.svg" alt =""/>
                             <div class="wheel-big-icon.svg"></div>
-                        
                     </div>
                 </div>
                 </header>    

@@ -9,7 +9,10 @@
 body{
     font-family: 'Sen', sans-serif;
 }
-
+p, label {
+    font: Sen;
+    color: #FFFFFF;
+}
 
 /* Navigation */
 
@@ -20,12 +23,12 @@ body{
 }
 
 .wrapper {
-    width: 1440px;
+    width: 1440;
     margin: 0 auto;
 }
 .wrapperhead {
     margin: 0 auto;
-    width: 1440px;
+    width: 100%;
 }
     .left {
         display: inline-flex;
@@ -86,15 +89,12 @@ nav .small-logo{
 
 .header-container {
     background: linear-gradient(180deg, #000000 6.77%, #2E6140 47.4%);
-    background-position: center;
-    
-    width: auto;
     height: 1080px;
-    display: inline-flex;
-    align-items: right;
 }
 
 header {
+    margin-right: 100px;
+    margin-left: 236px;
     display: inline-flex;
     justify-content: space-between;
 }
@@ -107,8 +107,8 @@ header h1 {
     margin-bottom: 3%;
 }
 header h2 {
-    font-weight: bold;
-    font-size: 24px;
+    font-weight: normal;
+    font-size: 18px;
     line-height: 20px;
     color: #FFFFFF;
     margin-bottom: 3%;
@@ -136,6 +136,7 @@ header p {
         line-height: 42px;
         border: 0;
         padding: 12px 48px;
+        margin-bottom: 18px;
     }
     .range-box input::placeholder {
         color: #b3b3b3;
@@ -152,6 +153,16 @@ header p {
     }
     .location-box input::placeholder{
         color: #b3b3b3;
+    }
+/* CheckBoxes */
+.category-container {
+    display: inline-flex;
+}
+    .cate-inner {
+        display: block;
+    }
+    .cate-check {
+        margin-right: 10px;
     }
 
 /* Spin Button */
