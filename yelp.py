@@ -1,4 +1,6 @@
 import argparse
+import webbrowser
+import random
 import json
 import pprint
 import requests
@@ -9,10 +11,20 @@ API_Key = 'Xmg8Xh7IcJTDh9YxXh_-F07uprqcEn7LKfcctQDx_GUNcJxCx02Vx1m3mfv0NzB79R8kC
 API_Host = 'https://api.yelp.com'
 Search_Path = '/v3/businesses/search'
 
-Term = 'seafood'
-Location = 'NYC'
-Search_Limit = 5
-Radius = 50
+Search_Limit = 50 #a decent number to work with
+
+#reading in from shell command
+Location = sys.argv[1]
+Radius = sys.argv[2]
+
+#Radius mile to meter conversion
+Radius = float(Radius) * 1609.34
+Radius = round(Radius) #query requires int
+
+if Radius > 40000: #max
+    Radius = 40000
+elif Radius < 1609: #approx. 1 mile
+    Radius = 1609
 
 def request(api_key, url_params=None):
 
@@ -31,16 +43,27 @@ def request(api_key, url_params=None):
 
 
 
-def search(api_key, term, location):
+def search(api_key, location):
 
     #query with imported variables
     url_params = {
-        'term': term.replace(' ', '+'),
         'location': location.replace(' ', '+'),
-        'limit': Search_Limit
+        'limit': Search_Limit,
+       'radius' : Radius
     }
 
     return request(API_Key, url_params=url_params)
 
-data_dict = search(API_Key, Term, Location)
-print(data_dict)    
+data = search(API_Key, Location) 
+data_dict = {}
+
+#json-to-dictionary
+num = 0
+for business in data['businesses']:
+    data_dict[num] = business["url"]
+    num += 1
+
+#random web browsing
+rand_int = random.randint(0, len(data_dict) - 1) 
+webbrowser.open(data_dict[rand_int])
+
