@@ -1,4 +1,10 @@
 function spinInputs() {
-    var input = document.getElementById("userInput").value;
-                            alert(input);
+    
+    var inputRange = document.getElementById("inputRange").value;
+    window.alert(inputRange);
+    var inputLocation = document.getElementById("inputLocation").value;
+    window.alert(inputLocation);
+    
+    
+
 }
